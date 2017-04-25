@@ -1,0 +1,92 @@
+$bannerColor: #c9427c;
+.app-container {
+    width: 90%;
+    left: 5%;
+    position: relative;
+    font-family: helvetica; // Till Raleway not fixed
+}
+
+.banner {
+    background-color: $bannerColor;
+    height: 26em;
+    position: relative;
+    >div {
+        display: flex;
+        justify-content: space-between;
+    }
+    .geek-label {
+        height: 5em;
+        margin: 1.5em;
+    }
+    .app-logo {
+        height: 25em;
+    }
+    .powered-by {
+        float: right;
+        margin: 2.5em;
+        font-size: 0.8em;
+        color: #FFF;
+    }
+    .down-arrow {
+        position: absolute;
+        bottom: 0;
+        height: 4em;
+        left: 50%;
+        margin-left: -3em;
+    }
+}
+
+.search-container {
+    // background-color: #333441;
+    height: 2.6em;
+    padding: 1em;
+    .search-bar {
+        height: 2.5em;
+        width: 40em;
+        border-radius: 25px;
+        background: #fff;
+        position: relative;
+        left: 50%;
+        margin-left: -21em;
+        .search-input {
+            border: none;
+            font-size: 0.9em;
+            padding: 0.3em;
+            position: relative;
+            left: 22px;
+            width: 23.5em;
+            top: 0.5em;
+            color: darkgrey;
+            &:focus {
+                outline: none;
+            }
+        }
+        .btn-search {
+            position: absolute;
+            width: 8em;
+            border-radius: 25px;
+            border: none;
+            height: 2.4em;
+            top: 4.4px;
+            right: 5px;
+            background-color: $bannerColor;
+            color: #FFF;
+        }
+    }
+}
+
+.result-area {
+    min-height: 15em;
+    background-color: #383a49;
+    .no-result {
+        text-align: center;
+        padding: 2em;
+        .no-result-icon {
+            height: 8em;
+        }
+        .no-result-text {
+            color: #4d4e59;
+            font-size: 1.2em;
+        }
+    }
+}

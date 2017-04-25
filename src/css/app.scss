@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('/assets/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import 'app_component';
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: #333441;
+}
+
+*:focus {
+    outline: none;
+}

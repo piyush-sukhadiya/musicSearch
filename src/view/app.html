@@ -1,0 +1,28 @@
+<div class="app-container">
+    <div class="banner">
+        <div>
+            <img src="../assets/images/gl-logo@2x.png" class="geek-label"></img>
+            <img src="../assets/images/hero-img@2x.png" class="app-logo"></img>
+            <span class="powered-by"> Powered by Spotify </span>
+        </div>
+        <img src="../assets/images/Page 1@2x.png" class="down-arrow"></img>
+    </div>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for artist or album title" ng-model="$ctrl.searchValue"></input>
+            <input type="button" class="btn-search" value="SEARCH" ng-click="$ctrl.onSearch()"></input>
+        </div>
+    </div>
+
+    <div class="result-area">
+        <div class="no-result" ng-hide="$ctrl.albums.length">
+            <img src="../assets/images/Magnify@2x.png" class="no-result-icon"></img>
+            <p class="no-result-text">Your results will appear here</p>
+        </div>
+
+        <div class="results">
+            <li ng-repeat="album in $ctrl.albums">{{album.name}}</li>
+        </div>
+    </div>
+</div>
