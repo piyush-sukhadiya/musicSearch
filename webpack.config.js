@@ -1,8 +1,8 @@
 var path = require('path'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     webpack = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
-CleanWebpackPlugin = require('clean-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
     filename: 'app.css'
@@ -25,13 +25,10 @@ module.exports = {
                     }
                 }]
             },
-            /*{
-                           test: /\.css$/,
-                           loader: ExtractTextPlugin.extract({
-                               use: ['style-loader', 'css!postcss']
-                           })
-
-                       },*/
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'url-loader?limit=30000&name=fonts/[name]-[hash].[ext]'
+            },
             {
                 // 'style-loader',
                 test: /\.(scss|sass)$/,
@@ -57,16 +54,6 @@ module.exports = {
                         // publicPath: 'img/'
                     }
                 }]
-            },
-            {
-                test: /\.(ttf)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: 'fonts/'
-                        // publicPath: 'img/'
-                }
-                // loader: 'file?name=fonts/[name].[ext]'
             }
         ]
     },
