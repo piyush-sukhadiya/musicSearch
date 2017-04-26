@@ -93,11 +93,41 @@ $bannerColor: #c9427c;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        .album {
+        .album-container {
             width: 13em;
             height: 16em;
             margin: 1em;
-            background: white;
+            border-radius: 3px;
+            list-style: none;
+            box-shadow: 0px 0px 10px 2px #202023;
+            .poster {
+                height: 81.2%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                .album-type-icon {
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    &.album {
+                        margin: 0.2em;
+                        height: 2.2em;
+                    }
+                    &.single {
+                        height: 1.5em;
+                        margin: 0.8em;
+                    }
+                }
+            }
+            .name {
+                font-size: 0.9em;
+                font-weight: bold;
+                padding: 1em 0.5em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                background: #fff;
+                white-space: nowrap;
+            }
         }
     }
 }

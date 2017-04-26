@@ -22,7 +22,14 @@
         </div>
 
         <div class="results">
-            <li ng-repeat="album in $ctrl.albums" class="album">{{album.name}}</li>
+            <li ng-repeat="album in $ctrl.albums" class="album-container">
+                <div class="poster" ng-style="{'background-image' : 'url('+'{{album.images[1].url}}'+')'}">
+                    <img ng-src="{{$ctrl.loadIconImages(album.album_type)}}" class="album-type-icon" ng-class="album.album_type"></img>
+                </div>
+                <div class="name">
+                    {{album.name}}
+                </div>
+            </li>
         </div>
     </div>
 </div>
