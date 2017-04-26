@@ -5,13 +5,13 @@
             <img src="../assets/images/hero-img@2x.png" class="app-logo"></img>
             <span class="powered-by"> Powered by Spotify </span>
         </div>
-        <img src="../assets/images/Page 1@2x.png" class="down-arrow"></img>
+        <img src="../assets/images/Page1@2x.png" class="down-arrow"></img>
     </div>
 
     <div class="search-container">
         <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search for artist or album title" ng-model="$ctrl.searchValue"></input>
-            <input type="button" class="btn-search" value="SEARCH" ng-click="$ctrl.onSearch()"></input>
+            <input type="text" class="search-input" placeholder="Search for artist or album title" ng-model="$ctrl.searchValue" ng-keyup="$event.keyCode == 13 && $ctrl.onSearch()()"></input>
+            <input type="button" class="cc-btn btn-search" value="SEARCH" ng-click="$ctrl.onSearch()"></input>
         </div>
     </div>
 
@@ -22,14 +22,31 @@
         </div>
 
         <div class="results">
-            <li ng-repeat="album in $ctrl.albums" class="album-container">
+            <li ng-repeat="album in $ctrl.albums" class="album-container" ng-click="$ctrl.showDetail(album)">
                 <div class="poster" ng-style="{'background-image' : 'url('+'{{album.images[1].url}}'+')'}">
-                    <img ng-src="{{$ctrl.loadIconImages(album.album_type)}}" class="album-type-icon" ng-class="album.album_type"></img>
+                    <img ng-src="{{$ctrl.loadIconImages(album.album_type)}}" class="album-type-icon" ng-class="album.album_type || album.type"></img>
                 </div>
                 <div class="name">
                     {{album.name}}
                 </div>
             </li>
         </div>
+        <div class="showmore" ng-if="$ctrl.next">
+            <input type="button" class="cc-btn btn-showmore" value="SHOW ME MORE!" ng-click="$ctrl.loadMore()"></input>
+        </div>
     </div>
+</div>
+
+<div class="modal-overlay" ng-show="$ctrl.showModel">
+    <div class="modal">
+        <img src="../assets/images/Cross@2x.png" class="close-icon" ng-click="$ctrl.selectedItem = null; $ctrl.showModel = false;"></img>
+        <div class="detail-poster" ng-style="$ctrl.getDetailPosterStyle()"></div>
+        <div class="detail-label">{{$ctrl.selectedItem.ccLabel}}</div>
+        <div class="detail-list">
+            <li ng-repeat="albumItem in $ctrl.albumList">{{albumItem.name}}</li>
+        </div>
+
+
+    </div>
+
 </div>

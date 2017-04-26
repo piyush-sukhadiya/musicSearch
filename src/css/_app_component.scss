@@ -5,6 +5,15 @@ $bannerColor: #c9427c;
     position: relative;
 }
 
+.cc-btn {
+    border-radius: 25px;
+    border: none;
+    height: 2.4em;
+    background-color: $bannerColor;
+    color: #FFF;
+    padding: 0 1.2em;
+}
+
 .banner {
     background-color: $bannerColor;
     height: 26em;
@@ -63,13 +72,8 @@ $bannerColor: #c9427c;
         .btn-search {
             position: absolute;
             width: 8em;
-            border-radius: 25px;
-            border: none;
-            height: 2.4em;
             top: 4.4px;
             right: 5px;
-            background-color: $bannerColor;
-            color: #FFF;
         }
     }
 }
@@ -113,7 +117,9 @@ $bannerColor: #c9427c;
                         margin: 0.2em;
                         height: 2.2em;
                     }
-                    &.single {
+                    &.single,
+                    &.compilation,
+                    &.artist {
                         height: 1.5em;
                         margin: 0.8em;
                     }
@@ -129,5 +135,9 @@ $bannerColor: #c9427c;
                 white-space: nowrap;
             }
         }
+    }
+    .showmore {
+        text-align: center;
+        padding: 1em;
     }
 }

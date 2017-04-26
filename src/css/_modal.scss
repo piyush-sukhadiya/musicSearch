@@ -1,0 +1,33 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+    position: relative;
+    top: 5em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    background: #fff;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 0.3em;
+    .close-icon {
+        position: absolute;
+        height: 2em;
+        right: 0;
+        margin: 1em;
+    }
+    .detail-poster {
+        height: 15em;
+    }
+    .detail-label {}
+    .detail-list {}
+}

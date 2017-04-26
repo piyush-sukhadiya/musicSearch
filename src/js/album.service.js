@@ -7,8 +7,14 @@ export default class AlbumnService {
     }
 
     searchAlbums(searchString) {
-        return this.$http.get(SPOTIFY_URL + 'v1/search?type=album&q=' + searchString).then(function(response) {
-            return response.data;
+        return this.$http.get(SPOTIFY_URL + 'v1/search?type=album,artist&q=' + searchString).then(function(response) {
+            return response.data.albums;
+        });
+    }
+
+    loadMore(url) {
+        return this.$http.get(url).then(function(response) {
+            return response.data.albums;
         });
     }
 }
